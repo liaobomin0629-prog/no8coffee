@@ -1,0 +1,1093 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NO.8 Coffee｜2026 三月豆單</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Noto+Serif+TC:wght@300;400;600&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #f5f0e8;
+    --espresso: #1a0f00;
+    --roast: #3d1f00;
+    --gold: #c8922a;
+    --gold-light: #e8b84b;
+    --warm-mid: #7a4a1e;
+    --accent-orange: #d4641a;
+    --muted: #8a7a6a;
+    --card-bg: #faf6ef;
+    --border: #e0d5c5;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background-color: var(--cream);
+    color: var(--espresso);
+    font-family: 'Noto Serif TC', serif;
+    font-weight: 300;
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    background: var(--espresso);
+    padding: 60px 24px 50px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 50% 0%, rgba(200,146,42,0.18) 0%, transparent 70%);
+  }
+  .hero-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(36px, 8vw, 64px);
+    font-weight: 900;
+    color: var(--gold-light);
+    letter-spacing: 0.08em;
+    position: relative;
+  }
+  .hero-logo span {
+    color: #fff;
+    font-size: 0.55em;
+    font-weight: 400;
+    letter-spacing: 0.25em;
+    display: block;
+    margin-top: 2px;
+  }
+  .hero-divider {
+    width: 60px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    margin: 18px auto;
+    position: relative;
+  }
+  .hero-divider::before {
+    content: '◆';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    color: var(--gold);
+    font-size: 8px;
+    background: var(--espresso);
+    padding: 0 4px;
+  }
+  .hero-subtitle {
+    color: rgba(245,240,232,0.7);
+    font-size: 13px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    position: relative;
+  }
+  .hero-tag {
+    display: inline-block;
+    margin-top: 14px;
+    background: var(--gold);
+    color: var(--espresso);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    padding: 5px 14px;
+    border-radius: 2px;
+    position: relative;
+  }
+
+  /* ── PROMO BANNER ── */
+  .promo-banner {
+    background: var(--gold);
+    text-align: center;
+    padding: 10px 20px;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--espresso);
+    letter-spacing: 0.08em;
+  }
+
+  /* ── BREW GUIDE ── */
+  .brew-section {
+    max-width: 700px;
+    margin: 40px auto 0;
+    padding: 0 20px;
+  }
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--roast);
+    border-left: 3px solid var(--gold);
+    padding-left: 14px;
+    margin-bottom: 18px;
+  }
+  .brew-card {
+    background: var(--espresso);
+    border-radius: 6px;
+    padding: 28px;
+    color: var(--cream);
+  }
+  .brew-title {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    color: var(--gold-light);
+    margin-bottom: 20px;
+    text-transform: uppercase;
+  }
+  .brew-steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 16px;
+    margin-bottom: 22px;
+  }
+  .brew-step {
+    text-align: center;
+    padding: 14px 10px;
+    border: 1px solid rgba(200,146,42,0.3);
+    border-radius: 4px;
+  }
+  .brew-step-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    color: var(--gold-light);
+    font-weight: 700;
+    line-height: 1;
+  }
+  .brew-step-unit {
+    font-size: 10px;
+    color: var(--gold);
+    letter-spacing: 0.1em;
+    margin-bottom: 4px;
+  }
+  .brew-step-label {
+    font-size: 12px;
+    color: rgba(245,240,232,0.7);
+  }
+  .brew-method {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    border-top: 1px solid rgba(200,146,42,0.2);
+    padding-top: 18px;
+  }
+  .grind-card {
+    background: rgba(200,146,42,0.08);
+    border-radius: 4px;
+    padding: 12px 14px;
+  }
+  .grind-label {
+    font-size: 10px;
+    color: var(--gold);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+  }
+  .grind-value {
+    font-size: 13px;
+    color: var(--cream);
+    font-weight: 400;
+  }
+  .brew-note {
+    margin-top: 14px;
+    font-size: 11.5px;
+    color: rgba(245,240,232,0.55);
+    line-height: 1.8;
+    border-top: 1px solid rgba(200,146,42,0.15);
+    padding-top: 14px;
+  }
+
+  /* ── PRODUCT CARDS ── */
+  .products-section {
+    max-width: 700px;
+    margin: 40px auto 60px;
+    padding: 0 20px;
+  }
+  .products-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .product-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.2s, box-shadow 0.2s;
+    position: relative;
+  }
+  .product-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 32px rgba(26,15,0,0.1);
+  }
+  .card-header {
+    display: flex;
+    align-items: stretch;
+    border-bottom: 1px solid var(--border);
+  }
+  .card-num {
+    background: var(--espresso);
+    color: var(--gold-light);
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    font-weight: 700;
+    width: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .card-title-block {
+    padding: 14px 16px;
+    flex: 1;
+  }
+  .card-name {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--roast);
+    line-height: 1.5;
+  }
+  .card-process {
+    font-size: 11px;
+    color: var(--accent-orange);
+    margin-top: 3px;
+    letter-spacing: 0.05em;
+  }
+  .card-price-block {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+    padding: 14px 16px;
+    flex-shrink: 0;
+  }
+  .price-label {
+    font-size: 9px;
+    color: var(--muted);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+  .price-value {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--gold);
+    line-height: 1.1;
+  }
+  .price-unit {
+    font-size: 10px;
+    color: var(--muted);
+  }
+
+  .card-body {
+    padding: 16px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 12px;
+  }
+
+  .flavor-section { flex: 1; }
+  .flavor-row {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 6px;
+    align-items: baseline;
+  }
+  .flavor-phase {
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.12em;
+    color: var(--muted);
+    text-transform: uppercase;
+    min-width: 26px;
+    flex-shrink: 0;
+  }
+  .flavor-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+  }
+  .flavor-tag {
+    background: rgba(200,146,42,0.12);
+    color: var(--warm-mid);
+    font-size: 11px;
+    padding: 2px 7px;
+    border-radius: 20px;
+    font-weight: 400;
+  }
+  .flavor-note {
+    margin-top: 8px;
+    font-size: 11.5px;
+    color: var(--muted);
+    line-height: 1.7;
+    font-style: italic;
+  }
+
+  .card-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    align-items: flex-end;
+  }
+  .meta-pill {
+    text-align: center;
+    padding: 6px 10px;
+    border-radius: 4px;
+    min-width: 64px;
+  }
+  .meta-pill.acidity {
+    background: var(--espresso);
+    color: var(--cream);
+  }
+  .meta-pill.barrel {
+    background: linear-gradient(135deg, #6b3a1f, #3d1f00);
+    color: var(--gold-light);
+  }
+  .meta-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 8px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    opacity: 0.7;
+    margin-bottom: 2px;
+  }
+  .meta-value {
+    font-size: 11px;
+    font-weight: 600;
+    line-height: 1.3;
+  }
+
+  .card-footer {
+    border-top: 1px solid var(--border);
+    padding: 12px 16px;
+    background: rgba(200,146,42,0.03);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+  }
+  .grind-rec {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+  .grind-pill {
+    font-size: 10.5px;
+    padding: 3px 10px;
+    border-radius: 3px;
+    border: 1px solid var(--border);
+  }
+  .grind-pill.black { color: var(--roast); border-color: var(--roast); }
+  .grind-pill.latte { color: var(--accent-orange); border-color: var(--accent-orange); }
+  .grind-intro {
+    font-size: 10px;
+    color: var(--muted);
+    letter-spacing: 0.05em;
+  }
+
+  /* Special badges */
+  .badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-family: 'DM Mono', monospace;
+    font-size: 8px;
+    letter-spacing: 0.12em;
+    padding: 3px 8px;
+    border-radius: 2px;
+    text-transform: uppercase;
+  }
+  .badge-barrel { background: var(--roast); color: var(--gold-light); }
+  .badge-natural { background: var(--accent-orange); color: #fff; }
+  .badge-washed { background: #4a6fa5; color: #fff; }
+  .badge-honey { background: #c8922a; color: #fff; }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--espresso);
+    color: rgba(245,240,232,0.5);
+    text-align: center;
+    padding: 30px 20px;
+    font-size: 11.5px;
+    line-height: 2;
+    letter-spacing: 0.05em;
+  }
+  footer strong {
+    color: var(--gold-light);
+    display: block;
+    font-family: 'Playfair Display', serif;
+    font-size: 16px;
+    margin-bottom: 6px;
+  }
+
+  @media (max-width: 480px) {
+    .brew-steps { grid-template-columns: repeat(2, 1fr); }
+    .brew-method { grid-template-columns: 1fr; }
+    .card-body { grid-template-columns: 1fr; }
+    .card-meta { flex-direction: row; align-items: flex-start; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="hero-logo">
+    NO.8
+    <span>C O F F E E</span>
+  </div>
+  <div class="hero-divider"></div>
+  <p class="hero-subtitle">手工烘焙 · 精品單品 · 每月豆單</p>
+  <span class="hero-tag">2026 三月豆單</span>
+</header>
+
+<!-- PROMO -->
+<div class="promo-banner">🎁 優惠活動：同品項第二件 8 折</div>
+
+<!-- BREW GUIDE -->
+<section class="brew-section">
+  <h2 class="section-title">耳掛式沖泡指南</h2>
+  <div class="brew-card">
+    <p class="brew-title">▸ Standard Drip Bag Brewing Guide</p>
+    <div class="brew-steps">
+      <div class="brew-step">
+        <div class="brew-step-num">92</div>
+        <div class="brew-step-unit">°C 水溫</div>
+        <div class="brew-step-label">熱水最適區間<br>88–94°C</div>
+      </div>
+      <div class="brew-step">
+        <div class="brew-step-num">10</div>
+        <div class="brew-step-unit">g 咖啡粉</div>
+        <div class="brew-step-label">每包固定量<br>無需秤量</div>
+      </div>
+      <div class="brew-step">
+        <div class="brew-step-num">150</div>
+        <div class="brew-step-unit">ml 水量</div>
+        <div class="brew-step-label">建議萃取量<br>可依喜好±20</div>
+      </div>
+      <div class="brew-step">
+        <div class="brew-step-num">3</div>
+        <div class="brew-step-unit">min 時間</div>
+        <div class="brew-step-label">悶蒸30秒<br>分段注水完成</div>
+      </div>
+    </div>
+
+    <div class="brew-method">
+      <div class="grind-card">
+        <div class="grind-label">☕ 黑咖啡 建議研磨</div>
+        <div class="grind-value">中研磨<br><small style="opacity:0.6;font-size:11px;">砂糖粗細｜凸顯酸甜層次</small></div>
+      </div>
+      <div class="grind-card">
+        <div class="grind-label">🥛 拿鐵 建議研磨</div>
+        <div class="grind-value">中細研磨<br><small style="opacity:0.6;font-size:11px;">砂糖細緻｜穿透奶香不失風味</small></div>
+      </div>
+    </div>
+
+    <p class="brew-note">
+      ① 先用少量熱水（約20ml）悶蒸30秒，讓咖啡粉充分排氣釋放香氣。<br>
+      ② 分3–4次注水，每次注入後稍待咖啡液滴至接近底部再繼續。<br>
+      ③ 桶陳系列（7–10號）建議水溫降至88°C，酒香更圓潤不苦澀。<br>
+      ④ 拿鐵使用時可加倍萃取至100ml，再加入熱牛奶比例為1:1.5。
+    </p>
+  </div>
+</section>
+
+<!-- PRODUCTS -->
+<section class="products-section">
+  <h2 class="section-title">本月精選豆單</h2>
+  <div class="products-grid">
+
+    <!-- 1 -->
+    <article class="product-card">
+      <span class="badge badge-natural">Natural</span>
+      <div class="card-header">
+        <div class="card-num">1</div>
+        <div class="card-title-block">
+          <div class="card-name">衣索比亞 · 古吉 G1<br>凱勇山 單一農場</div>
+          <div class="card-process">蜜處理</div>
+        </div>
+        <div class="card-price-block">
+          <span class="price-label">半磅</span>
+          <span class="price-value">600</span>
+          <span class="price-unit">元</span>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="flavor-section">
+          <div class="flavor-row">
+            <span class="flavor-phase">前調</span>
+            <div class="flavor-tags">
+              <span class="flavor-tag">甜桃</span>
+              <span class="flavor-tag">柑橘</span>
+              <span class="flavor-tag">楓糖</span>
+            </div>
+          </div>
+          <div class="flavor-row">
+            <span class="flavor-phase">中調</span>
+            <div class="flavor-tags">
+              <span class="flavor-tag">尾韻茶香</span>
+            </div>
+          </div>
+          <div class="flavor-row">
+            <span class="flavor-phase">後調</span>
+            <div class="flavor-tags">
+              <span class="flavor-tag">湯質滑順</span>
+              <span class="flavor-tag">甜感綿長</span>
+            </div>
+          </div>
+          <p class="flavor-note">蜜處理帶出果皮自然糖分，甜桃柑橘的果香清晰，尾段有柔和茶韻。入門款推薦首選。</p>
+        </div>
+        <div class="card-meta">
+          <div class="meta-pill acidity">
+            <div class="meta-label">酸度</div>
+            <div class="meta-value">柔酸<br>甘甜<br>滑順</div>
+          </div>
+        </div>
+      </div>
+      <div class="card-footer">
+        <span class="grind-intro">研磨建議 ▸</span>
+        <div class="grind-rec">
+          <span class="grind-pill black">黑咖啡：中研磨</span>
+          <span class="grind-pill latte">拿鐵：中細研磨</span>
+        </div>
+      </div>
+    </article>
+
+    <!-- 2 -->
+    <article class="product-card">
+      <span class="badge badge-natural">Natural</span>
+      <div class="card-header">
+        <div class="card-num">2</div>
+        <div class="card-title-block">
+          <div class="card-name">衣索比亞 · 蓋德奧 耶珈雪啡<br>果丁丁</div>
+          <div class="card-process">日曬 G1</div>
+        </div>
+        <div class="card-price-block">
+          <span class="price-label">半磅</span>
+          <span class="price-value">600</span>
+          <span class="price-unit">元</span>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="flavor-section">
+          <div class="flavor-row">
+            <span class="flavor-phase">前調</span>
+            <div class="flavor-tags">
+              <span class="flavor-tag">莓果</span>
+              <span class="flavor-tag">柑橘</span>
+              <span class="flavor-tag">花香</span>
+            </div>
+          </div>
+          <div class="flavor-row">
+            <span class="flavor-phase">中調</span>
+            <div class="flavor-tags">
+              <span class="flavor-tag">熱帶水果</span>
+              <span class="flavor-tag">酸甜平衡</span>
+            </div>
+          </div>
+          <div class="flavor-row">
+            <span class="flavor-phase">後調</span>
+            <div class="flavor-tags">
+              <span class="flavor-tag">甘醇圓潤</span>
+            </div>
+          </div>
+          <p class="flavor-note">耶珈雪啡日曬經典風格，莓果與熱帶水果交織，酸甜平衡感極佳，喜愛花果香型者必試。</p>
+        </div>
+        <div class="card-meta">
+          <div class="meta-pill acidity">
+            <div class="meta-label">酸度</div>
+            <div class="meta-value">柔酸<br>甘醇<br>圓潤</div>
+          </div>
+        </div>
+      </div>
+      <div class="card-footer">
+        <span class="grind-intro">研磨建議 ▸</span>
+        <div class="grind-rec">
+          <span class="grind-pill black">黑咖啡：中研磨</span>
+          <span class="grind-pill latte">拿鐵：中細研磨</span>
+        </div>
+      </div>
+    </article>
+
+    <!-- 3 -->
+    <article class="product-card">
+      <span class="badge badge-washed">Washed</span>
+      <div class="card-header">
+        <div class="card-num">3</div>
+        <div class="card-title-block">
+          <div class="card-name">肯亞 · 奇里雅加 克拉處理廠</div>
+          <div class="card-process">水洗 / AA 級</div>
+        </div>
+        <div class="card-price-block">
+          <span class="price-label">半磅</span>
+          <span class="price-value">600</span>
+          <span class="price-unit">元</span>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="flavor-section">
+          <div class="flavor-row">
+            <span class="flavor-phase">前調</span>
+            <div class="flavor-tags">
+              <span class="flavor-tag">藍莓</span>
+              <span class="flavor-tag">桃子</span>
+            </div>
+          </div>
+          <div class="flavor-row">
+            <span class="flavor-phase">中調</span>
+            <div class="flavor-tags">
+              <span class="flavor-tag">梅子</span>
+              <span class="flavor-tag">黑糖</span>
+            </div>
+          </div>
+          <div class="flavor-row">
+            <span class="flavor-phase">後調</span>
+            <div class="flavor-tags">
+              <span class="flavor-tag">酸甜平衡</span>
+              <span class="flavor-tag">甘醇</span>
+            </div>
+          </div>
+          <p class="flavor-note">肯亞 AA 水洗以明亮果酸聞名，藍莓與梅子的果酸層次豐富，黑糖尾韻讓整體口感飽滿有厚度。</p>
+        </div>
+        <div class="card-meta">
+          <div class="meta-pill acidity">
+            <div class="meta-label">酸度</div>
+            <div class="meta-value">果酸<br>甘醇<br>圓潤</div>
+          </div>
+        </div>
+      </div>
+      <div class="card-footer">
+        <span class="grind-intro">研磨建議 ▸</span>
+        <div class="grind-rec">
+          <span class="grind-pill black">黑咖啡：中研磨</span>
+          <span class="grind-pill latte">拿鐵：中細研磨</span>
+        </div>
+      </div>
+    </article>
+
+    <!-- 4 -->
+    <article class="product-card">
+      <span class="badge badge-honey">Honey</span>
+      <div class="card-header">
+        <div class="card-num">4</div>
+        <div class="card-title-block">
+          <div class="card-name">衣索比亞 · 古吉 水風鈴</div>
+          <div class="card-process">紅蜜處理 / G1</div>
+        </div>
+        <div class="card-price-block">
+          <span class="price-label">半磅</span>
+          <span class="price-value">700</span>
+          <span class="price-unit">元</span>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="flavor-section">
+          <div class="flavor-row">
+            <span class="flavor-phase">前調</span>
+            <div class="flavor-tags">
+              <span class="flavor-tag">水蜜桃</span>
+              <span class="flavor-tag">蜂蜜柚子茶</span>
+            </div>
+          </div>
+          <div class="flavor-row">
+            <span class="flavor-phase">中調</span>
+            <div class="flavor-tags">
+              <span class="flavor-tag">荔枝</span>
+              <span class="flavor-tag">橙花花香</span>
+            </div>
+          </div>
+          <div class="flavor-row">
+            <span class="flavor-phase">後調</span>
+            <div class="flavor-tags">
+              <span class="flavor-tag">風味甜美</span>
+              <span class="flavor-tag">綿長</span>
+            </div>
+          </div>
+          <p class="flavor-note">紅蜜處理保留大量果皮糖分，水蜜桃與荔枝的甜美感令人印象深刻，橙花花香讓整杯充滿優雅氣質。</p>
+        </div>
+        <div class="card-meta">
+          <div class="meta-pill acidity">
+            <div class="meta-label">酸度</div>
+            <div class="meta-value">果酸<br>甘甜<br>花香</div>
+          </div>
+        </div>
+      </div>
+      <div class="card-footer">
+        <span class="grind-intro">研磨建議 ▸</span>
+        <div class="grind-rec">
+          <span class="grind-pill black">黑咖啡：中研磨</span>
+          <span class="grind-pill latte">拿鐵：中細研磨</span>
+        </div>
+      </div>
+    </article>
+
+    <!-- 5 -->
+    <article class="product-card">
+      <span class="badge badge-honey">Black Honey</span>
+      <div class="card-header">
+        <div class="card-num">5</div>
+        <div class="card-title-block">
+          <div class="card-name">哥斯大黎加 · 布蘭卡<br>奇里波景美莊園</div>
+          <div class="card-process">黑蜜處理</div>
+        </div>
+        <div class="card-price-block">
+          <span class="price-label">半磅</span>
+          <span class="price-value">600</span>
+          <span class="price-unit">元</span>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="flavor-section">
+          <div class="flavor-row">
+            <span class="flavor-phase">前調</span>
+            <div class="flavor-tags">
+              <span class="flavor-tag">梅茶</span>
+              <span class="flavor-tag">龍眼乾</span>
+            </div>
+          </div>
+          <div class="flavor-row">
+            <span class="flavor-phase">中調</span>
+            <div class="flavor-tags">
+              <span class="flavor-tag">奶油</span>
+              <span class="flavor-tag">柑橘</span>
+            </div>
+          </div>
+          <div class="flavor-row">
+            <span class="flavor-phase">後調</span>
+            <div class="flavor-tags">
+              <span class="flavor-tag">湯質甜美</span>
+              <span class="flavor-tag">圓潤</span>
+            </div>
+          </div>
+          <p class="flavor-note">黑蜜處理工序繁複，龍眼乾的東方甜感與奶油口感融合，是少見兼具亞洲風味與厚實湯質的莊園豆。</p>
+        </div>
+        <div class="card-meta">
+          <div class="meta-pill acidity">
+            <div class="meta-label">酸度</div>
+            <div class="meta-value">柔酸<br>甘甜<br>圓潤</div>
+          </div>
+        </div>
+      </div>
+      <div class="card-footer">
+        <span class="grind-intro">研磨建議 ▸</span>
+        <div class="grind-rec">
+          <span class="grind-pill black">黑咖啡：中研磨</span>
+          <span class="grind-pill latte">拿鐵：中細研磨</span>
+        </div>
+      </div>
+    </article>
+
+    <!-- 6 -->
+    <article class="product-card">
+      <span class="badge badge-washed">Washed</span>
+      <div class="card-header">
+        <div class="card-num">6</div>
+        <div class="card-title-block">
+          <div class="card-name">衣索比亞 · 古吉 嗚拉嘎<br>提波波卡</div>
+          <div class="card-process">G1 / 水洗</div>
+        </div>
+        <div class="card-price-block">
+          <span class="price-label">半磅</span>
+          <span class="price-value">600</span>
+          <span class="price-unit">元</span>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="flavor-section">
+          <div class="flavor-row">
+            <span class="flavor-phase">前調</span>
+            <div class="flavor-tags">
+              <span class="flavor-tag">檸檬</span>
+              <span class="flavor-tag">白桃</span>
+            </div>
+          </div>
+          <div class="flavor-row">
+            <span class="flavor-phase">中調</span>
+            <div class="flavor-tags">
+              <span class="flavor-tag">雞蛋花</span>
+              <span class="flavor-tag">佛手柑</span>
+            </div>
+          </div>
+          <div class="flavor-row">
+            <span class="flavor-phase">後調</span>
+            <div class="flavor-tags">
+              <span class="flavor-tag">果酸</span>
+              <span class="flavor-tag">甘甜滑順</span>
+            </div>
+          </div>
+          <p class="flavor-note">水洗處理讓風味更純淨，雞蛋花與佛手柑的花香調性獨特，檸檬酸感清爽乾淨，適合偏好清新風格的咖啡人。</p>
+        </div>
+        <div class="card-meta">
+          <div class="meta-pill acidity">
+            <div class="meta-label">酸度</div>
+            <div class="meta-value">果酸<br>甘甜<br>滑順</div>
+          </div>
+        </div>
+      </div>
+      <div class="card-footer">
+        <span class="grind-intro">研磨建議 ▸</span>
+        <div class="grind-rec">
+          <span class="grind-pill black">黑咖啡：中研磨</span>
+          <span class="grind-pill latte">拿鐵：中細研磨</span>
+        </div>
+      </div>
+    </article>
+
+    <!-- 7 -->
+    <article class="product-card">
+      <span class="badge badge-barrel">Brandy Barrel</span>
+      <div class="card-header">
+        <div class="card-num">7</div>
+        <div class="card-title-block">
+          <div class="card-name">肯亞 AA</div>
+          <div class="card-process">白蘭地橡木桶處理法</div>
+        </div>
+        <div class="card-price-block">
+          <span class="price-label">半磅</span>
+          <span class="price-value">850</span>
+          <span class="price-unit">元</span>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="flavor-section">
+          <div class="flavor-row">
+            <span class="flavor-phase">前調</span>
+            <div class="flavor-tags">
+              <span class="flavor-tag">莓果</span>
+              <span class="flavor-tag">梅子</span>
+            </div>
+          </div>
+          <div class="flavor-row">
+            <span class="flavor-phase">中調</span>
+            <div class="flavor-tags">
+              <span class="flavor-tag">香草</span>
+              <span class="flavor-tag">紅茶</span>
+              <span class="flavor-tag">酸甜扎實</span>
+            </div>
+          </div>
+          <div class="flavor-row">
+            <span class="flavor-phase">後調</span>
+            <div class="flavor-tags">
+              <span class="flavor-tag">尾韻酒香</span>
+              <span class="flavor-tag">圓潤</span>
+            </div>
+          </div>
+          <p class="flavor-note">肯亞 AA 以白蘭地木桶熟成，酒香與果酸交融，紅茶與香草的複雜層次讓每一口都有新發現。桶陳系列水溫建議 88°C。</p>
+        </div>
+        <div class="card-meta">
+          <div class="meta-pill barrel">
+            <div class="meta-label">桶陳</div>
+            <div class="meta-value">白蘭地<br>木桶</div>
+          </div>
+          <div class="meta-pill acidity">
+            <div class="meta-label">酸度</div>
+            <div class="meta-value">果酸<br>甘甜<br>酒香</div>
+          </div>
+        </div>
+      </div>
+      <div class="card-footer">
+        <span class="grind-intro">研磨建議 ▸</span>
+        <div class="grind-rec">
+          <span class="grind-pill black">黑咖啡：中粗研磨</span>
+          <span class="grind-pill latte">拿鐵：中研磨</span>
+        </div>
+      </div>
+    </article>
+
+    <!-- 8 -->
+    <article class="product-card">
+      <span class="badge badge-barrel">Strawberry Brandy</span>
+      <div class="card-header">
+        <div class="card-num">8</div>
+        <div class="card-title-block">
+          <div class="card-name">衣索比亞 · 耶珈雪啡 果丁丁</div>
+          <div class="card-process">草莓白蘭地橡木桶處理法</div>
+        </div>
+        <div class="card-price-block">
+          <span class="price-label">半磅</span>
+          <span class="price-value">1000</span>
+          <span class="price-unit">元</span>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="flavor-section">
+          <div class="flavor-row">
+            <span class="flavor-phase">前調</span>
+            <div class="flavor-tags">
+              <span class="flavor-tag">草莓</span>
+              <span class="flavor-tag">水蜜桃</span>
+              <span class="flavor-tag">花香</span>
+            </div>
+          </div>
+          <div class="flavor-row">
+            <span class="flavor-phase">中調</span>
+            <div class="flavor-tags">
+              <span class="flavor-tag">佛手柑</span>
+              <span class="flavor-tag">草莓白蘭地酒香</span>
+            </div>
+          </div>
+          <div class="flavor-row">
+            <span class="flavor-phase">後調</span>
+            <div class="flavor-tags">
+              <span class="flavor-tag">餘韻甜美</span>
+              <span class="flavor-tag">綿長</span>
+            </div>
+          </div>
+          <p class="flavor-note">本月旗艦款。草莓白蘭地桶陳賦予咖啡極為獨特的莓果酒香，搭配耶珈雪啡原有的花果底蘊，風味層次超乎想像。限量推薦。</p>
+        </div>
+        <div class="card-meta">
+          <div class="meta-pill barrel">
+            <div class="meta-label">旗艦桶陳</div>
+            <div class="meta-value">草莓<br>白蘭地</div>
+          </div>
+          <div class="meta-pill acidity">
+            <div class="meta-label">酸度</div>
+            <div class="meta-value">柔酸<br>甘甜<br>酒香</div>
+          </div>
+        </div>
+      </div>
+      <div class="card-footer">
+        <span class="grind-intro">研磨建議 ▸</span>
+        <div class="grind-rec">
+          <span class="grind-pill black">黑咖啡：中粗研磨</span>
+          <span class="grind-pill latte">拿鐵：中研磨</span>
+        </div>
+      </div>
+    </article>
+
+    <!-- 9 -->
+    <article class="product-card">
+      <span class="badge badge-barrel">Whisky Barrel</span>
+      <div class="card-header">
+        <div class="card-num">9</div>
+        <div class="card-title-block">
+          <div class="card-name">瓜地馬拉 · 高山極硬豆</div>
+          <div class="card-process">威士忌橡木桶處理法</div>
+        </div>
+        <div class="card-price-block">
+          <span class="price-label">半磅</span>
+          <span class="price-value">850</span>
+          <span class="price-unit">元</span>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="flavor-section">
+          <div class="flavor-row">
+            <span class="flavor-phase">前調</span>
+            <div class="flavor-tags">
+              <span class="flavor-tag">莓果</span>
+              <span class="flavor-tag">杏桃</span>
+            </div>
+          </div>
+          <div class="flavor-row">
+            <span class="flavor-phase">中調</span>
+            <div class="flavor-tags">
+              <span class="flavor-tag">可可</span>
+              <span class="flavor-tag">威士忌酒香</span>
+            </div>
+          </div>
+          <div class="flavor-row">
+            <span class="flavor-phase">後調</span>
+            <div class="flavor-tags">
+              <span class="flavor-tag">圓潤綿長</span>
+            </div>
+          </div>
+          <p class="flavor-note">高海拔極硬豆密度高，風味保存完整，威士忌桶陳讓可可與煙燻感完美融合，是適合睡前慢品的一款豆子。</p>
+        </div>
+        <div class="card-meta">
+          <div class="meta-pill barrel">
+            <div class="meta-label">桶陳</div>
+            <div class="meta-value">威士忌<br>木桶</div>
+          </div>
+          <div class="meta-pill acidity">
+            <div class="meta-label">酸度</div>
+            <div class="meta-value">柔酸<br>圓潤<br>酒香</div>
+          </div>
+        </div>
+      </div>
+      <div class="card-footer">
+        <span class="grind-intro">研磨建議 ▸</span>
+        <div class="grind-rec">
+          <span class="grind-pill black">黑咖啡：中粗研磨</span>
+          <span class="grind-pill latte">拿鐵：中研磨</span>
+        </div>
+      </div>
+    </article>
+
+    <!-- 10 -->
+    <article class="product-card">
+      <span class="badge badge-barrel">Rum Barrel</span>
+      <div class="card-header">
+        <div class="card-num">10</div>
+        <div class="card-title-block">
+          <div class="card-name">衣索比亞 · 耶珈雪啡 巫里</div>
+          <div class="card-process">蘭姆酒橡木桶處理法</div>
+        </div>
+        <div class="card-price-block">
+          <span class="price-label">半磅</span>
+          <span class="price-value">950</span>
+          <span class="price-unit">元</span>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="flavor-section">
+          <div class="flavor-row">
+            <span class="flavor-phase">前調</span>
+            <div class="flavor-tags">
+              <span class="flavor-tag">水蜜桃</span>
+              <span class="flavor-tag">草莓</span>
+              <span class="flavor-tag">葡萄</span>
+            </div>
+          </div>
+          <div class="flavor-row">
+            <span class="flavor-phase">中調</span>
+            <div class="flavor-tags">
+              <span class="flavor-tag">花香</span>
+              <span class="flavor-tag">柑橘</span>
+            </div>
+          </div>
+          <div class="flavor-row">
+            <span class="flavor-phase">後調</span>
+            <div class="flavor-tags">
+              <span class="flavor-tag">酒香甜美</span>
+              <span class="flavor-tag">圓潤</span>
+            </div>
+          </div>
+          <p class="flavor-note">蘭姆酒桶帶來熱帶甘蔗的甜美底調，搭配耶珈的草莓葡萄果香，整體輕盈卻有深度，是桶陳系列中最易入口的一款。</p>
+        </div>
+        <div class="card-meta">
+          <div class="meta-pill barrel">
+            <div class="meta-label">桶陳</div>
+            <div class="meta-value">蘭姆酒<br>木桶</div>
+          </div>
+          <div class="meta-pill acidity">
+            <div class="meta-label">酸度</div>
+            <div class="meta-value">柔酸<br>圓潤<br>酒香</div>
+          </div>
+        </div>
+      </div>
+      <div class="card-footer">
+        <span class="grind-intro">研磨建議 ▸</span>
+        <div class="grind-rec">
+          <span class="grind-pill black">黑咖啡：中粗研磨</span>
+          <span class="grind-pill latte">拿鐵：中研磨</span>
+        </div>
+      </div>
+    </article>
+
+  </div><!-- /grid -->
+</section>
+
+<footer>
+  <strong>NO.8 Coffee</strong>
+  手工烘焙 · 每月精選 · 從一顆豆到一杯咖啡<br>
+  賣貨便取件 · 全程品質把關<br>
+  <br>
+  豆單每月更新｜同品項第二件 8 折
+</footer>
+
+</body>
+</html>
